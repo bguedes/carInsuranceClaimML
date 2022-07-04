@@ -23,5 +23,5 @@ def localizationPrediction(imageBase64Encoded, model):
 
 def detectDamageLocalization(args):
     imageBase64Encoded = args["imageBase64"]
-    model = keras.models.load_model('carDamageLocalizationPredictionModel.h5')
+    model = keras.models.load_model('models/carDamageLocalizationPredictionModel.h5')
     return localizationPrediction(imageBase64Encoded, model)
