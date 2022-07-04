@@ -22,7 +22,7 @@ def damagePrediction(imageBase64Encoded, model):
             print("Validating location of damage....Result:",locationArray[key])
     print("Severity assessment complete.")
 
-def detectCarImage(args):
+def detectDamageLocalization(args):
     imageBase64Encoded = args["imageBase64"]
     model = keras.models.load_model('carDamageLocalisationPredictionModel.h5')
     return damagePrediction(imageBase64Encoded, model)
