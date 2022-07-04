@@ -19,10 +19,9 @@ def damagePrediction(imageBase64Encoded, model):
     severityArray = {0:'Minor', 1:'Moderate', 2:'Severe'}
     for key in severityArray.keys():
         if pred_labels[0] == key:
-            print("Validating severity of damage...Result:",severityArray[key])
-    print("Severity assessment complete.")
+          return {"severity" : severityArray[key]}
 
 def detectCarImage(args):
     imageBase64Encoded = args["imageBase64"]
-    model = keras.models.load_model('carDamageSeverityPredictionModel.h5')
+    model = keras.models.load_model('models/carDamageSeverityPredictionModel.h5')
     return damagePrediction(imageBase64Encoded, model)
