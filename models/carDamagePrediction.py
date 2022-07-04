@@ -28,5 +28,5 @@ def pred_and_plot(model, base64ImageEncoded):
 
 def detectIfCarIsImage():
     imageBase64Encoded = args["imageBase64"]
-    model = keras.models.load_model('carDamagePrediction.h5')
+    model = keras.models.load_model('models/carDamagePrediction.h5')
     return pred_and_plot(model, imageBase64Encoded)
