@@ -12,7 +12,7 @@ def load_and_prep_image(imageBase64Encoded, img_shape=224):
   img = img/255.
   return img
 
-def damagePrediction(imageBase64Encoded, model):
+def severityPrediction(imageBase64Encoded, model):
     img = load_and_prep_image(imageBase64Encoded)
     pred = model.predict(tf.expand_dims(img, axis=0))
     pred_labels = np.argmax(pred, axis=1)
@@ -21,7 +21,7 @@ def damagePrediction(imageBase64Encoded, model):
         if pred_labels[0] == key:
           return {"severity" : severityArray[key]}
 
-def detectCarImage(args):
+def detectDamageSeverity(args):
     imageBase64Encoded = args["imageBase64"]
     model = keras.models.load_model('models/carDamageSeverityPredictionModel.h5')
-    return damagePrediction(imageBase64Encoded, model)
+    return severityPrediction(imageBase64Encoded, model)
