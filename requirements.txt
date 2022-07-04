@@ -1,0 +1,7 @@
+cdsw==1.0.1
+joblib==0.17.0
+keras==2.9.0
+numpy==1.20
+Pillow==9.1.1
+requests==2.24.0
+tensorflow==2.9.0
